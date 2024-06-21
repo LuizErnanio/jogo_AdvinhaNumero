@@ -1,21 +1,34 @@
 import random
+import tkinter
 
-numeroRespostas = 3
-numeroAleatorio = random.randint(1, 10)
+janela = tkinter.Tk()
+janela.geometry("500x300")
+botao = tkinter.Button(janela,"Jogue")
+botao.pack(padx=10,pady=10)
+janela.mainloop()
 
 
-#fazer um laço de repetição
 while True:
-    numeroDigitado = input("Digite um numero aqui!")
-    numeroRespostas -= 1
-    if numeroDigitado == numeroAleatorio:
-        print("Você acertou!")
-    else:
-        print("Você errou!")
-        if numeroRespostas == 0:
-            break
+    numeroRespostas = 3
+    numeroAleatorio = random.randint(1, 10)
+    while True:
+        numeroDigitado = int(input("Digite um numero aqui!"))
+        numeroRespostas -= 1
+        if numeroDigitado == numeroAleatorio:
+            print("Você acertou!")
+            break            
+        else:        
+            if numeroRespostas == 0:
+                print("Você esgotou suas chances!")
+                break
+            else: 
+                print(f"Você errou! tem mais {numeroRespostas} tentaivas.")
+    tentarNovamente = int(input("Gostaria de tentar novamente? digite 1 para SIM e 2 para NÃO"))
+    if tentarNovamente == 2:
+        print("Jogo finalizado!")
+        break
 
 
-#colocar um numero random e definir a limitação de numeros tanto de tentativa como opção de resposta.
-#quando acertar o usuario recebe uma mendagem de acerto, o mesmo acontece após as 3 tentativas erradas, mas com uma mensagem que ele perdeu.
+
+
  
