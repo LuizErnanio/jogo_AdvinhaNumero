@@ -1,12 +1,4 @@
 import random
-import tkinter
-
-janela = tkinter.Tk()
-janela.geometry("500x300")
-botao = tkinter.Button(janela,"Jogue")
-botao.pack(padx=10,pady=10)
-janela.mainloop()
-
 
 while True:
     numeroRespostas = 3
@@ -26,9 +18,4 @@ while True:
     tentarNovamente = int(input("Gostaria de tentar novamente? digite 1 para SIM e 2 para NÃO"))
     if tentarNovamente == 2:
         print("Jogo finalizado!")
-        break
-
-
-
-
- 
+        break 
